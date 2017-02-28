@@ -20,6 +20,9 @@ from libros import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home123, name='home')
+    url(r'^$', views.home123, name='home'),
+    url(r'^libros/$', views.lista_libros, name='libros'),
+    url(r'^detalle/(?P<lib>\d+)/$', views.detalle, name='detalle'),
+    url(r'^libros/$', views.detalle, name='detalle de libros'),
 
 ]

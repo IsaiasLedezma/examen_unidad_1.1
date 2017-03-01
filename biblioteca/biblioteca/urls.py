@@ -20,9 +20,9 @@ from libros import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^detalleLibro/(?P<object_id>\d+)/$', views.detalle, name='detalleLibro'),
     url(r'^$', views.home123, name='home'),
     url(r'^libros/$', views.lista_libros, name='libros'),
-    url(r'^detalle/(?P<lib>\d+)/$', views.detalle, name='detalle'),
-    url(r'^libros/$', views.detalle, name='detalle de libros'),
-
+    url(r'^detalle/(?P<slug>[\w-]+)/$', views.detalle_slug, name='detalle_slug'),
+    url(r'^agregar_libro/$', views.agregar_libro, name='agregar_libro'),
 ]
